@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="Quartz" Version="3.0.7" />
+    <PackageReference Include="Vulild.Service" Version="2020.521.843" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vulild.Service.Task\Vulild.Service.Task.csproj" />
+  </ItemGroup>
+
+</Project>
