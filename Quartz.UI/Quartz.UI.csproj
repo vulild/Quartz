@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Quartz.Framework\Vulild.Service.Quartz.csproj" />
     <ProjectReference Include="..\Quartz.Task\Quartz.Tasks.csproj" />
+    <ProjectReference Include="..\Vulild.Service.Quartz\Vulild.Service.Quartz.csproj" />
   </ItemGroup>
 
 

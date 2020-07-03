@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.UI", "Quartz.UI\Quar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.Server", "Quartz.Server\Quartz.Server.csproj", "{AF059E97-9558-4B7F-8E31-1CFA6713DEEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.Quartz", "Quartz.Framework\Vulild.Service.Quartz.csproj", "{F897E494-1EC0-42AD-BC79-7B42657853A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.Quartz", "Vulild.Service.Quartz\Vulild.Service.Quartz.csproj", "{F897E494-1EC0-42AD-BC79-7B42657853A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.Task", "Vulild.Service.Task\Vulild.Service.Task.csproj", "{B41B3BB5-AD68-45E1-8769-AA0F98C081FD}"
 EndProject
