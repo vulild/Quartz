@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Vulild.Service.Task;
+using Vulild.Service.TaskService;
 
 namespace Vulild.Service.Quartz
 {
-    public class QuartzTask : Task.TaskInfo
+    public class QuartzTask : TaskInfo
     {
         public string GroupName { get; set; }
 

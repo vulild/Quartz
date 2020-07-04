@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vulild.Service.Task
+namespace Vulild.Service.TaskService
 {
     public interface ITaskService : IService
     {

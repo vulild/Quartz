@@ -47,6 +47,7 @@ namespace Vulild.Service.Quartz
 
                 var schedulerFactory = new StdSchedulerFactory(properties);
                 _Scheduler = schedulerFactory.GetScheduler().Result;
+                _Scheduler.ListenerManager.AddJobListener(new SimpleJobListener());
             }
             return new QuartzTaskService(_Scheduler);
         }

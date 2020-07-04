@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vulild.Service.Task\Vulild.Service.Task.csproj" />
+    <ProjectReference Include="..\Vulild.Service.TaskService\Vulild.Service.TaskService.csproj" />
   </ItemGroup>
 
 </Project>

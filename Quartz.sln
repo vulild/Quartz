@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.Server", "Quartz.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.Quartz", "Vulild.Service.Quartz\Vulild.Service.Quartz.csproj", "{F897E494-1EC0-42AD-BC79-7B42657853A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.Task", "Vulild.Service.Task\Vulild.Service.Task.csproj", "{B41B3BB5-AD68-45E1-8769-AA0F98C081FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.TaskService", "Vulild.Service.TaskService\Vulild.Service.TaskService.csproj", "{B41B3BB5-AD68-45E1-8769-AA0F98C081FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.Tasks", "Quartz.Task\Quartz.Tasks.csproj", "{88401074-F01B-4599-8790-DA6CF77A3F41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.Tasks", "Quartz.Task\Quartz.Tasks.csproj", "{88401074-F01B-4599-8790-DA6CF77A3F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

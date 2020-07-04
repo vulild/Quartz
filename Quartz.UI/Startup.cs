@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Quartz.Tasks;
 using Vulild.Service;
 using Vulild.Service.Quartz;
-using Vulild.Service.Task;
+using Vulild.Service.TaskService;
 
 namespace Quartz.UI
 {
@@ -47,7 +47,7 @@ namespace Quartz.UI
             });
 
             var service = ServiceUtil.GetService<ITaskService>();
-            service.AddTask(new QuartzTask
+            service.UpdateTask(new QuartzTask
             {
                 GroupName = "TaskGroup",
                 JobName = "TaskJob",

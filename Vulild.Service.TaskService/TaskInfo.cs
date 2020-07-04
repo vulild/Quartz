@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Vulild.Service.Task
+namespace Vulild.Service.TaskService
 {
     public abstract class TaskInfo
     {
