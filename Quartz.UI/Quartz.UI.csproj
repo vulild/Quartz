@@ -4,14 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Vulild.Service" Version="2020.521.843" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Quartz.Task\Quartz.Tasks.csproj" />
-    <ProjectReference Include="..\Vulild.Service.Quartz\Vulild.Service.Quartz.csproj" />
-  </ItemGroup>
-
-
 </Project>
