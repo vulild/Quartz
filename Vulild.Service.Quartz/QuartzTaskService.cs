@@ -28,7 +28,7 @@ namespace Vulild.Service.Quartz
             {
                 jdm.Add(dic);
             }
-            jdm.Add("TaskInfo", JsonConvert.SerializeObject(config));
+            jdm.Add("TaskInfo", config);
 
             IJobDetail job = JobBuilder.Create(task.TaskType)
                                 .WithIdentity(task.JobName, task.GroupName)

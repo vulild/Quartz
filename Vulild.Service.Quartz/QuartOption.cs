@@ -18,6 +18,20 @@ namespace Vulild.Service.Quartz
 
         public string Provider { get; set; } = "MySql";
 
+        /// <summary>
+        /// Scheduler在JobDetail即将被执行，但又被TriggerListerner否决触发的事件
+        /// </summary>
+        public event JobExecution<QuartzTask> JobExecutionVetoedEvent;
+
+        /// <summary>
+        /// Scheduler在JobDetail被执行之后调用触发的事件
+        /// </summary>
+        public event JobExecution<QuartzTask> JobWasExecutedEvent;
+
+        /// <summary>
+        /// Scheduler在JobDetail将要被执行时触发的事件。
+        /// </summary>
+        public event JobExecution<QuartzTask> JobTobeExecutedEVent;
 
         IScheduler _Scheduler;
         public override IService CreateService()
@@ -47,7 +61,12 @@ namespace Vulild.Service.Quartz
 
                 var schedulerFactory = new StdSchedulerFactory(properties);
                 _Scheduler = schedulerFactory.GetScheduler().Result;
-                _Scheduler.ListenerManager.AddJobListener(new SimpleJobListener());
+                var taskListener = new SimpleJobListener<QuartzTask>();
+                taskListener.JobExecutionVetoedEvent += this.JobExecutionVetoedEvent;
+                taskListener.JobTobeExecutedEVent += this.JobTobeExecutedEVent;
+                taskListener.JobWasExecutedEvent += this.JobWasExecutedEvent;
+
+                _Scheduler.ListenerManager.AddJobListener(taskListener);
             }
             return new QuartzTaskService(_Scheduler);
         }

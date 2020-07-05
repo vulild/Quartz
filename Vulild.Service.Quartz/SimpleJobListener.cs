@@ -1,15 +1,25 @@
-﻿using Quartz;
+﻿using Newtonsoft.Json;
+using Quartz;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Vulild.Service.TaskService;
 
 namespace Vulild.Service.Quartz
 {
-    public class SimpleJobListener : IJobListener
+    public delegate void JobExecution<TI>(TaskInfo task) where TI : TaskInfo;
+    public class SimpleJobListener<TI> : IJobListener
+        where TI : TaskInfo
     {
         public string Name => this.GetType().FullName;
+
+        internal event JobExecution<TI> JobExecutionVetoedEvent;
+
+        internal event JobExecution<TI> JobWasExecutedEvent;
+
+        internal event JobExecution<TI> JobTobeExecutedEVent;
 
         /// <summary>
         /// Scheduler在JobDetail即将被执行，但又被TriggerListerner否决
@@ -19,7 +29,8 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobExecutionVetoed(IJobExecutionContext context, CancellationToken cancellationToken = default)
         {
-            return Task.Run(() => { Console.WriteLine(context.JobDetail.Key); });
+            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            return Task.Run(() => { JobExecutionVetoedEvent?.Invoke(taskInfo); });
         }
 
         /// <summary>
@@ -30,7 +41,8 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobToBeExecuted(IJobExecutionContext context, CancellationToken cancellationToken = default)
         {
-            return Task.Run(() => { Console.WriteLine(context.JobDetail.Key); });
+            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            return Task.Run(() => { JobTobeExecutedEVent?.Invoke(taskInfo); });
         }
 
         /// <summary>
@@ -42,7 +54,8 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobWasExecuted(IJobExecutionContext context, JobExecutionException jobException, CancellationToken cancellationToken = default)
         {
-            return Task.Run(() => { Console.WriteLine(context.JobDetail.Key); });
+            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            return Task.Run(() => { JobWasExecutedEvent?.Invoke(taskInfo); });
         }
     }
 }
