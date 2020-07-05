@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Quartz.Tasks;
+using Vulild.Service;
+using Vulild.Service.Quartz;
+using Vulild.Service.TaskService;
 
 namespace Quartz.UI
 {
@@ -29,6 +33,21 @@ namespace Quartz.UI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            ServiceUtil.SearchAssmbly();
+            ServiceUtil.InitService("taskservice", new QuartOption()
+            {
+                ConnectionString = "Server=vulild.top;Database=Quartz;Uid=vulild;Pwd=gelz1122"
+            });
+
+            var service = ServiceUtil.GetService<ITaskService>();
+            service.AddTask(new QuartzTask
+            {
+                GroupName = "TaskGroup",
+                JobName = "TaskJob",
+                TaskType = typeof(DemoTask),
+                Cron = "0/5 * * * * ?"
+            });
+            service.StartTask();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Quartz.Task\Quartz.Tasks.csproj" />
+    <ProjectReference Include="..\Vulild.Service.Quartz\Vulild.Service.Quartz.csproj" />
+  </ItemGroup>
+
 </Project>

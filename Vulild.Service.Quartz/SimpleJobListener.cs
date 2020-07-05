@@ -29,7 +29,7 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobExecutionVetoed(IJobExecutionContext context, CancellationToken cancellationToken = default)
         {
-            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            TI taskInfo = (TI)JsonConvert.DeserializeObject(context.JobDetail.JobDataMap["TaskInfo"].ToString(), typeof(TI));
             return Task.Run(() => { JobExecutionVetoedEvent?.Invoke(taskInfo); });
         }
 
@@ -41,7 +41,7 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobToBeExecuted(IJobExecutionContext context, CancellationToken cancellationToken = default)
         {
-            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            TI taskInfo = (TI)JsonConvert.DeserializeObject(context.JobDetail.JobDataMap["TaskInfo"].ToString(), typeof(TI));
             return Task.Run(() => { JobTobeExecutedEVent?.Invoke(taskInfo); });
         }
 
@@ -54,7 +54,7 @@ namespace Vulild.Service.Quartz
         /// <returns></returns>
         public System.Threading.Tasks.Task JobWasExecuted(IJobExecutionContext context, JobExecutionException jobException, CancellationToken cancellationToken = default)
         {
-            TI taskInfo = (TI)context.JobDetail.JobDataMap["TaskInfo"];
+            TI taskInfo = (TI)JsonConvert.DeserializeObject(context.JobDetail.JobDataMap["TaskInfo"].ToString(), typeof(TI));
             return Task.Run(() => { JobWasExecutedEvent?.Invoke(taskInfo); });
         }
     }
