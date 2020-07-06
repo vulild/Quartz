@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Radzen.Blazor" Version="2.10.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Quartz.Task\Quartz.Tasks.csproj" />
     <ProjectReference Include="..\Vulild.Service.Quartz\Vulild.Service.Quartz.csproj" />
   </ItemGroup>

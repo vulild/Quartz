@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulild.Service.TaskService"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.Tasks", "Quartz.Task\Quartz.Tasks.csproj", "{88401074-F01B-4599-8790-DA6CF77A3F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.UI", "Quartz.UI\Quartz.UI.csproj", "{5936C5C4-F7B4-4C91-A22F-7D95F99BD711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.UI", "Quartz.UI\Quartz.UI.csproj", "{5936C5C4-F7B4-4C91-A22F-7D95F99BD711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.UI.Blazor", "Quartz.UI.Blazor\Quartz.UI.Blazor.csproj", "{8F80F9EA-DBD4-43D8-BD85-F73E4E143AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5936C5C4-F7B4-4C91-A22F-7D95F99BD711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5936C5C4-F7B4-4C91-A22F-7D95F99BD711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5936C5C4-F7B4-4C91-A22F-7D95F99BD711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F80F9EA-DBD4-43D8-BD85-F73E4E143AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F80F9EA-DBD4-43D8-BD85-F73E4E143AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F80F9EA-DBD4-43D8-BD85-F73E4E143AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F80F9EA-DBD4-43D8-BD85-F73E4E143AA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
